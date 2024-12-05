@@ -1,8 +1,11 @@
 import React from 'react'
+import { SendCard } from '~/app/component/SendCard'
 
 const page = () => {
   return (
-    <div>P2P</div>
+<div className='w-full'>
+<SendCard/>
+</div>
   )
 }
 

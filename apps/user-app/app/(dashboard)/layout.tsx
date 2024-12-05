@@ -2,6 +2,7 @@
 import { SidebarItem } from "../component/SidebarItem";
 import {Appbar} from "../../../../packages/ui/src/AppBar"
 import Dashboard from "../component/Dashboard";
+import { AppbarClient } from "../component/AppBarClient";
 export default function Layout({
   children,
 }: {
@@ -11,13 +12,14 @@ export default function Layout({
     <>
     
     <div className="flex">
-      
+        
+
         <div className="w-72 border-r border-slate-300 min-h-screen mr-4 pt-28">
             <div>
                 <SidebarItem href={"/dashboard"} icon={<HomeIcon />} title="Home" />
                 <SidebarItem href={"/transfer"} icon={<TransferIcon />} title="Transfer" />
                 <SidebarItem href={"/transactions"} icon={<TransactionsIcon />} title="Transactions" />
-                <SidebarItem href={"/p2p"} icon={<TransactionsIcon />} title="P2P" />
+                <SidebarItem href={"/p2p"} icon={<P2P />} title="P2P" />
             </div>
         </div>
             {children}
@@ -43,6 +45,11 @@ function TransferIcon() {
 function TransactionsIcon() {
     return <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+  </svg>}
+  function P2P(){
+    return<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
   </svg>
+  
   
 }
