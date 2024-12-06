@@ -38,5 +38,10 @@
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.16",
     "typescript": "5.5.4"
+  },
+  "functions": {
+    "api/**/*.ts": {
+      "runtime": "nodejs14.x"
+    }
   }
 }
