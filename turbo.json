@@ -1,11 +1,18 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "ui": "tui",
-  "tasks": {
+  "pipeline": {
     "build": {
       "dependsOn": ["^build"],
+      "outputs": [".next/**", "!.next/cache/**"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "env": {
+        "NEXTAUTH_SECRET": "your-secret-key",
+        "NEXTAUTH_URL": "your-auth-url",
+        "GITHUB_ID": "your-github-id",
+        "GITHUB_SECRET": "your-github-secret",
+        "GOOGLE_ID": "your-google-id"
+      }
     },
     "lint": {
       "dependsOn": ["^lint"]

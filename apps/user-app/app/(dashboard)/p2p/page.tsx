@@ -12,7 +12,7 @@ const prisma = new PrismaClient();
 async function getDetails() {
   const session = await getServerSession(authOptions);
 
-  const transactions = await prisma.P2PTranscation.findMany({
+  const transactions = await prisma.p2PTranscation.findMany({
     where: {
       fromUserId: Number(session?.user?.id),
     },
