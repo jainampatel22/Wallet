@@ -20,6 +20,8 @@ number String  @unique
 Password String
 OnRampTranscation OnRampTranscation[]
 Balance Balance[]
+sendTransfers P2PTranscation[] @relation(name: "FromUserRelation")
+reciveTransfers P2PTranscation[] @relation(name: "ToUserRelation")
 
 }
 model Balance{
@@ -28,6 +30,15 @@ model Balance{
   amount Int
   locked Int
   user User @relation(fields: [userId],references: [id])
+}
+model P2PTranscation{
+  id Int @id @default(autoincrement())
+  StartTime DateTime
+  amount Int
+  fromUserId Int
+  fromUser User @relation(name: "FromUserRelation", fields: [fromUserId],references: [id])
+  toUserId Int
+  toUser User  @relation(name: "ToUserRelation", fields: [toUserId],references: [id])
 }
 model OnRampTranscation{
     id Int @id @default(autoincrement())

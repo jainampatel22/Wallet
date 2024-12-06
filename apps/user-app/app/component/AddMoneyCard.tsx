@@ -18,7 +18,7 @@ const SUPPORTED_BANKS = [{
 export  const AddMoney = () => {
     const [redirectUrl, setRedirectUrl] = useState(SUPPORTED_BANKS[0]?.redirectUrl);
     const [amount, setamount] = useState(0)
-    const [provider, setprovider] = useState(SUPPORTED_BANKS[0]?.name) || ""
+    const [provider, setprovider] = useState(SUPPORTED_BANKS[0]?.name)
     return <Card title="Add Money">
     <div className="w-full">
         <TextInput label={"Amount"} placeholder={"Amount"} onChange={(value) => {

@@ -31,7 +31,7 @@ try {
                 token:paymentInformation.token,
             },
             data:{
-                status:"Success",
+                status:'Success',
             }
         })
     ])

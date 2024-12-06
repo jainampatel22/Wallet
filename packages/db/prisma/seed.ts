@@ -9,7 +9,7 @@ async function main() {
     create: {
       number: '1111111111',
       Password: await bcrypt.hash('alice', 10),
-      name: 'alice',
+      name: '',
       Balance: {
         create: {
             amount: 20000,
